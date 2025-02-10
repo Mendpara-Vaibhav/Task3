@@ -1,0 +1,67 @@
+<select>
+        <option>Move To</option>
+                <option value="Average">Average</option>
+                <option value="Good">Good</option>
+                <option value="Nice">Nice</option>
+                <option value="Excellent">Excellent</option>
+</select>
+
+
+
+ let optionA = document.getElementById("categoryA").value;
+  if (optionA === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (optionA === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (optionA === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (optionA === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  let optionG = document.getElementById("categoryG").value;
+  if (optionG === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (optionG === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (optionG === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (optionG === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  let optionN = document.getElementById("categoryN").value;
+  if (optionN === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (optionN === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (optionN === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (optionN === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  let optionE = document.getElementById("categoryE").value;
+  if (optionE === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (optionE === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (optionE === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (optionE === "Nice") {
+    arr[index].rating = "Nice";
+  }
+
+
