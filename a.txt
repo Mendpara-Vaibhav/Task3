@@ -7,6 +7,7 @@
 </select>
 
 
+<hr>
 
  let optionA = document.getElementById("categoryA").value;
   if (optionA === "Poor") {
@@ -63,5 +64,118 @@
   if (optionE === "Nice") {
     arr[index].rating = "Nice";
   }
+
+
+  <hr>
+
+
+function onShifta(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categorya").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
+function onShiftg(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categoryg").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
+function onShiftn(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categoryn").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
+function onShifte(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categorye").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
 
 

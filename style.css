@@ -11,11 +11,6 @@ th {
   text-align: center;
 }
 
-.row {
-  display: flex;
-  padding: 5px;
-}
-
-.column {
-  flex: 50%;
+.table {
+  flex-direction: column;
 }

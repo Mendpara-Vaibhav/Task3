@@ -51,7 +51,7 @@ function averageTable() {
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="category" onchange=onShift(${index},'Average') >
+      html += `<td>${`<select id="categorya" onchange=onShifta(${index},'Average') >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Good">Good</option>
@@ -71,7 +71,7 @@ function goodTable() {
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="category" onchange=onShift(${index},'Good') >
+      html += `<td>${`<select id="categoryg" onchange=onShiftg(${index},'Good') >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Average">Average</option>
@@ -92,7 +92,7 @@ function niceTable() {
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="category" onchange=onShift(${index},'Nice') >
+      html += `<td>${`<select id="categoryn" onchange=onShiftn(${index},'Nice') >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Average">Average</option>
@@ -113,7 +113,7 @@ function excellentTable() {
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="category" onchange=onShift(${index},'Excellent') >
+      html += `<td>${`<select id="categorye" onchange=onShifte(${index},'Excellent') >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Average">Average</option>
@@ -131,13 +131,9 @@ function resetForm() {
 }
 
 function onShift(index, rating) {
-  // console.log(rating);
   let arr = arrList.filter((data) => data.rating == rating);
-  // console.log(arr);
 
   let option = document.getElementById("category").value;
-
-  // console.log(option);
   if (option === "Poor") {
     arr[index].rating = "Poor";
   }
@@ -159,16 +155,112 @@ function onShift(index, rating) {
   goodTable();
   niceTable();
   excellentTable();
+}
 
-  // if (arr[index].rating === "Poor") {
-  //   arr[index].rating = "Average";
-  // } else if (arr[index].rating === "Average") {
-  //   arr[index].rating = "Good";
-  // } else if (arr[index].rating === "Good") {
-  //   arr[index].rating = "Nice";
-  // } else if (arr[index].rating === "Nice") {
-  //   arr[index].rating = "Excellent";
-  // } else if (arr[index].rating === "Excellent") {
-  //   arr[index].rating = "Poor";
-  // }
+function onShifta(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categorya").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
+function onShiftg(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categoryg").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
+function onShiftn(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categoryn").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
+}
+
+function onShifte(index, rating) {
+  let arr = arrList.filter((data) => data.rating == rating);
+
+  let option = document.getElementById("categorye").value;
+  if (option === "Poor") {
+    arr[index].rating = "Poor";
+  }
+  if (option === "Average") {
+    arr[index].rating = "Average";
+  }
+  if (option === "Good") {
+    arr[index].rating = "Good";
+  }
+  if (option === "Nice") {
+    arr[index].rating = "Nice";
+  }
+  if (option === "Excellent") {
+    arr[index].rating = "Excellent";
+  }
+
+  poorTable();
+  averageTable();
+  goodTable();
+  niceTable();
+  excellentTable();
 }
