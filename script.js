@@ -10,7 +10,6 @@ function onFormSubmit() {
   goodTable();
   niceTable();
   excellentTable();
-
   resetForm();
 }
 
@@ -26,11 +25,11 @@ function poorTable() {
   document.getElementById("poor").innerHTML = "";
 
   arrList
-    .filter((data) => data.rating == "Poor")
+    .filter((data) => data.rating === "Poor")
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="category" onchange=onShift(${index},'Poor') >
+      html += `<td>${`<select onchange=onShift(${index},'Poor',this.value) >
                 <option value="">Move To</option>
                 <option value="Average">Average</option>
                 <option value="Good">Good</option>
@@ -47,11 +46,11 @@ function averageTable() {
   document.getElementById("average").innerHTML = "";
 
   arrList
-    .filter((data) => data.rating == "Average")
+    .filter((data) => data.rating === "Average")
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="categorya" onchange=onShifta(${index},'Average') >
+      html += `<td>${`<select onchange=onShift(${index},'Average',this.value) >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Good">Good</option>
@@ -67,11 +66,11 @@ function goodTable() {
   let html = "";
   document.getElementById("good").innerHTML = "";
   arrList
-    .filter((data) => data.rating == "Good")
+    .filter((data) => data.rating === "Good")
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="categoryg" onchange=onShiftg(${index},'Good') >
+      html += `<td>${`<select onchange=onShift(${index},'Good',this.value) >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Average">Average</option>
@@ -88,11 +87,11 @@ function niceTable() {
   document.getElementById("nice").innerHTML = "";
 
   arrList
-    .filter((data) => data.rating == "Nice")
+    .filter((data) => data.rating === "Nice")
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="categoryn" onchange=onShiftn(${index},'Nice') >
+      html += `<td>${`<select onchange=onShift(${index},'Nice',this.value) >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Average">Average</option>
@@ -109,11 +108,11 @@ function excellentTable() {
   document.getElementById("excellent").innerHTML = "";
 
   arrList
-    .filter((data) => data.rating == "Excellent")
+    .filter((data) => data.rating === "Excellent")
     .forEach((element, index) => {
       html += `<tr>`;
       html += `<td>${element.name}</td>`;
-      html += `<td>${`<select id="categorye" onchange=onShifte(${index},'Excellent') >
+      html += `<td>${`<select onchange=onShift(${index},'Excellent',this.value) >
         <option value="">Move To</option>
         <option value="Poor">Poor</option>
         <option value="Average">Average</option>
@@ -127,140 +126,18 @@ function excellentTable() {
 
 function resetForm() {
   document.getElementById("form").reset();
-  selectedRowIndex = null;
 }
 
-function onShift(index, rating) {
+function onShift(index, rating, newRating) {
   let arr = arrList.filter((data) => data.rating == rating);
+  // console.log(arr);
 
-  let option = document.getElementById("category").value;
-  if (option === "Poor") {
-    arr[index].rating = "Poor";
+  if (newRating) {
+    arr[index].rating = newRating;
+    poorTable();
+    averageTable();
+    goodTable();
+    niceTable();
+    excellentTable();
   }
-  if (option === "Average") {
-    arr[index].rating = "Average";
-  }
-  if (option === "Good") {
-    arr[index].rating = "Good";
-  }
-  if (option === "Nice") {
-    arr[index].rating = "Nice";
-  }
-  if (option === "Excellent") {
-    arr[index].rating = "Excellent";
-  }
-
-  poorTable();
-  averageTable();
-  goodTable();
-  niceTable();
-  excellentTable();
-}
-
-function onShifta(index, rating) {
-  let arr = arrList.filter((data) => data.rating == rating);
-
-  let option = document.getElementById("categorya").value;
-  if (option === "Poor") {
-    arr[index].rating = "Poor";
-  }
-  if (option === "Average") {
-    arr[index].rating = "Average";
-  }
-  if (option === "Good") {
-    arr[index].rating = "Good";
-  }
-  if (option === "Nice") {
-    arr[index].rating = "Nice";
-  }
-  if (option === "Excellent") {
-    arr[index].rating = "Excellent";
-  }
-
-  poorTable();
-  averageTable();
-  goodTable();
-  niceTable();
-  excellentTable();
-}
-
-function onShiftg(index, rating) {
-  let arr = arrList.filter((data) => data.rating == rating);
-
-  let option = document.getElementById("categoryg").value;
-  if (option === "Poor") {
-    arr[index].rating = "Poor";
-  }
-  if (option === "Average") {
-    arr[index].rating = "Average";
-  }
-  if (option === "Good") {
-    arr[index].rating = "Good";
-  }
-  if (option === "Nice") {
-    arr[index].rating = "Nice";
-  }
-  if (option === "Excellent") {
-    arr[index].rating = "Excellent";
-  }
-
-  poorTable();
-  averageTable();
-  goodTable();
-  niceTable();
-  excellentTable();
-}
-
-function onShiftn(index, rating) {
-  let arr = arrList.filter((data) => data.rating == rating);
-
-  let option = document.getElementById("categoryn").value;
-  if (option === "Poor") {
-    arr[index].rating = "Poor";
-  }
-  if (option === "Average") {
-    arr[index].rating = "Average";
-  }
-  if (option === "Good") {
-    arr[index].rating = "Good";
-  }
-  if (option === "Nice") {
-    arr[index].rating = "Nice";
-  }
-  if (option === "Excellent") {
-    arr[index].rating = "Excellent";
-  }
-
-  poorTable();
-  averageTable();
-  goodTable();
-  niceTable();
-  excellentTable();
-}
-
-function onShifte(index, rating) {
-  let arr = arrList.filter((data) => data.rating == rating);
-
-  let option = document.getElementById("categorye").value;
-  if (option === "Poor") {
-    arr[index].rating = "Poor";
-  }
-  if (option === "Average") {
-    arr[index].rating = "Average";
-  }
-  if (option === "Good") {
-    arr[index].rating = "Good";
-  }
-  if (option === "Nice") {
-    arr[index].rating = "Nice";
-  }
-  if (option === "Excellent") {
-    arr[index].rating = "Excellent";
-  }
-
-  poorTable();
-  averageTable();
-  goodTable();
-  niceTable();
-  excellentTable();
 }
